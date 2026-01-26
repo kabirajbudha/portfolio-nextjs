@@ -56,7 +56,7 @@ export const assets = {
   expense_tracker: "/assets/expense-tracker.png",
 
   // Resume
-  resume: "/assets/sample-resume1.pdf",
+  resume: "/assets/sample-resume13.pdf",
 };
 
 // Info list for About section
