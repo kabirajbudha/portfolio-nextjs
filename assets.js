@@ -89,10 +89,10 @@ export const toolsData = [assets.vscode, assets.mongodb, assets.figma, assets.gi
 
 // Work / portfolio data
 export const workData = [
-  { title: "Portfolio Website", bgImage: assets.work_portfolio, link: "https://yourportfolio.com" },
-  { title: "E-commerce App", bgImage: assets.work_ecommerce, link: "https://yourecommerce.com" },
-  { title: "Expense Tracker", bgImage: assets.expense_tracker, link: "https://yourtaskapp.com" },
-  { title: "Blog Platform", bgImage: assets.work_blog, link: "https://yourblog.com" },
+  { title: "Portfolio Website", description: "Next.js & TailwindCSS", bgImage: assets.work_portfolio, link: "https://yourportfolio.com" },
+  { title: "E-commerce App", description: "React.js, Express.js & MongoDB", bgImage: assets.work_ecommerce, link: "https://yourecommerce.com" },
+  { title: "Expense Tracker", description: "React.js frontend project", bgImage: assets.expense_tracker, link: "https://yourtaskapp.com" },
+  { title: "Blog Platform", description: "Responsive blogging site", bgImage: assets.work_blog, link: "https://yourblog.com" },
 ];
 
 

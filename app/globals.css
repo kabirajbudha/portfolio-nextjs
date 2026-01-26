@@ -2,7 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Only apply Outfit globally */
-* {
-  font-family: Outfit, sans-serif;
-}
+/* Fonts are loaded via next/font in app/layout.js - avoid forcing font globally here */

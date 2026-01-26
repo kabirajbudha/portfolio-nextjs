@@ -10,21 +10,26 @@ const Contact = () => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
-    formData.append("access_key", "4b24fd01-8a78-4dfd-b1ac-1f4e46d63df6");
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const response = await fetch("/api/contact", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
     const data = await response.json();
 
-    if (data.success) {
+    if (response.ok && data.success) {
       setResult("Form Submitted Successfully");
       event.target.reset();
     } else {
       console.log("Error", data);
-      setResult(data.message);
+      setResult(data.message || "Submission failed");
     }
   };
 
@@ -37,8 +42,12 @@ const Contact = () => {
       className='w-full px-4 sm:px-6 lg:px-[12%] pb-10 scroll-mt-20
             bg-[url("/footer-bg-color.png")] bg-cover bg-center dark:bg-[url("/footer-bg-color-dark.png")] dark:bg-cover dark:bg-center dark:bg-darkTheme'
     >
-      <motion.h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</motion.h4>
-      <motion.h2 className="text-center text-5xl font-Ovo">Get in touch</motion.h2>
+      <motion.h4 className="text-center mb-2 text-lg font-Ovo">
+        Connect with me
+      </motion.h4>
+      <motion.h2 className="text-center text-5xl font-Ovo">
+        Get in touch
+      </motion.h2>
       <motion.p className="text-center max-w-2xl mx-auto mt-5 mb-12">
         I'd love to hear from you! If you have any questions, comments, or
         feedback, please use the form below.
@@ -77,7 +86,12 @@ const Contact = () => {
           className="mt-4 w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2 bg-black text-white rounded-xl hover:bg-gray-800 transition text-sm dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
         >
           Submit now{" "}
-          <Image src={assets.right_arrow_white} width={16} height={16} alt="Right Arrow" />
+          <Image
+            src={assets.right_arrow_white}
+            width={16}
+            height={16}
+            alt="Right Arrow"
+          />
         </motion.button>
         <p className="mt-4">{result}</p>
       </motion.form>
