@@ -73,8 +73,9 @@ const About = ({ isDarkMode }) => {
           >
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <motion.li
-                whileHover={{ scale: 1.05 }}
-                className="border-[0.5px] border-gray-400 rounded-xl p-3 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="border-[0.5px] border-gray-400 rounded-xl p-3 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50 glass-effect"
                 key={index}
               >
                 <Image
@@ -86,7 +87,9 @@ const About = ({ isDarkMode }) => {
                 <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
                   {title}
                 </h3>
-                <p className="text-gray-600 text-sm dark:text-white/80">{description}</p>
+                <p className="text-gray-600 text-sm dark:text-white/80">
+                  {description}
+                </p>
               </motion.li>
             ))}
           </motion.ul>
@@ -108,8 +111,11 @@ const About = ({ isDarkMode }) => {
           >
             {toolsData.map((item, index) => (
               <motion.li
-                whileHover={{ scale: 1.1 }}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.5 + index * 0.1 }}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 glass-effect"
                 key={index}
               >
                 <Image src={item} alt="Tool" width={28} height={28} />

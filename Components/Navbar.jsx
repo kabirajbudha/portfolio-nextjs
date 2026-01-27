@@ -6,8 +6,10 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
   const [isscrool, setisscrool] = useState(false);
   const sideMenuRef = useRef();
 
-  const openMenu = () => sideMenuRef.current.style.transform = "translateX(0)";
-  const closeMenu = () => sideMenuRef.current.style.transform = "translateX(100%)";
+  const openMenu = () =>
+    (sideMenuRef.current.style.transform = "translateX(0)");
+  const closeMenu = () =>
+    (sideMenuRef.current.style.transform = "translateX(100%)");
 
   useEffect(() => {
     const handleScroll = () => setisscrool(window.scrollY > 50);
@@ -28,7 +30,9 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
       </div>
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isscrool ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
+          isscrool
+            ? "bg-white/80 bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme/80"
+            : ""
         }`}
       >
         <a href="#top">
@@ -43,19 +47,39 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
             isscrool
-              ? ""
+              ? "glass-effect"
               : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
           } `}
         >
-          <li><a className="font-Ovo" href="#top">Home</a></li>
-          <li><a className="font-Ovo" href="#about">About me</a></li>
-          <li><a className="font-Ovo" href="#services">Services</a></li>
-          <li><a className="font-Ovo" href="#work">My work</a></li>
-          <li><a className="font-Ovo" href="#contact">Contact me</a></li>
+          <li>
+            <a className="font-Ovo" href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#work">
+              My work
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#contact">
+              Contact me
+            </a>
+          </li>
         </ul>
 
         <div className="flex items-center gap-4">
-          <button onClick={() => setisDarkMode(pre => !pre)}>
+          <button onClick={() => setisDarkMode((pre) => !pre)}>
             <Image
               src={isDarkMode ? assets.sun_icon : assets.moon_icon}
               width={24}
@@ -68,7 +92,12 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50"
           >
             Contact
-            <Image src={assets.arrow_icon} width={16} height={16} alt="Arrow Icon" />
+            <Image
+              src={assets.arrow_icon}
+              width={16}
+              height={16}
+              alt="Arrow Icon"
+            />
           </a>
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image
@@ -82,7 +111,7 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
 
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 translate-x-full transition duration-500 dark:bg-darkHover dark:text-white"
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50/95 backdrop-blur-lg translate-x-full transition duration-500 dark:bg-darkHover/95 dark:text-white glass-effect"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image
@@ -93,11 +122,31 @@ const Navbar = ({ isDarkMode, setisDarkMode }) => {
               className="cursor-pointer"
             />
           </div>
-          <li><a className="font-Ovo" onClick={closeMenu} href="#top">Home</a></li>
-          <li><a className="font-Ovo" onClick={closeMenu} href="#about">About me</a></li>
-          <li><a className="font-Ovo" onClick={closeMenu} href="#services">Services</a></li>
-          <li><a className="font-Ovo" onClick={closeMenu} href="#work">My work</a></li>
-          <li><a className="font-Ovo" onClick={closeMenu} href="#contact">Contact me</a></li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="#work">
+              My work
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="#contact">
+              Contact me
+            </a>
+          </li>
         </ul>
       </nav>
     </>

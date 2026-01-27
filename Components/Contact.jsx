@@ -56,34 +56,46 @@ const Contact = () => {
       <motion.form onSubmit={onSubmit} className="max-w-[70%] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 mb-6">
           <motion.input
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             type="text"
             placeholder="Enter your name"
             required
             name="name"
-            className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white/90 dark:text-white dark:placeholder:text-white"
+            className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white/90 dark:text-white dark:placeholder:text-white glass-effect"
           />
           <motion.input
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             type="email"
             placeholder="Enter your email"
             required
             name="email"
-            className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white/90 dark:text-white dark:placeholder:text-white"
+            className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white/90 dark:text-white dark:placeholder:text-white glass-effect"
           />
         </div>
 
         <motion.textarea
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           rows="4"
           placeholder="Enter your message"
           required
           name="message"
-          className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white dark:text-white dark:placeholder:text-white"
+          className="w-full p-3 bg-gray-100 border border-black rounded-xl outline-none text-gray-800 placeholder-black focus:border-gray-500 text-sm dark:bg-darkHover/30 dark:border-white dark:text-white dark:placeholder:text-white glass-effect"
         ></motion.textarea>
 
         <motion.button
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           type="submit"
-          className="mt-4 w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2 bg-black text-white rounded-xl hover:bg-gray-800 transition text-sm dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
+          className="mt-4 w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2 bg-black text-white rounded-xl hover:bg-gray-800 transition text-sm dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover shadow-lg hover:shadow-xl"
         >
           Submit now{" "}
           <Image

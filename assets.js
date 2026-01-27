@@ -82,19 +82,61 @@ export const infoList = [
   },
 ];
 
-
 // Tools / skills images
-export const toolsData = [assets.vscode, assets.mongodb, assets.figma, assets.git];
-
+export const toolsData = [
+  assets.vscode,
+  assets.mongodb,
+  assets.figma,
+  assets.git,
+];
 
 // Work / portfolio data
 export const workData = [
-  { title: "Portfolio Website", description: "Next.js & TailwindCSS", bgImage: assets.work_portfolio, link: "https://yourportfolio.com" },
-  { title: "E-commerce App", description: "React.js, Express.js & MongoDB", bgImage: assets.work_ecommerce, link: "https://yourecommerce.com" },
-  { title: "Expense Tracker", description: "React.js frontend project", bgImage: assets.expense_tracker, link: "https://yourtaskapp.com" },
-  { title: "Blog Platform", description: "Responsive blogging site", bgImage: assets.work_blog, link: "https://yourblog.com" },
+  {
+    title: "Portfolio Website",
+    description: "Next.js & TailwindCSS",
+    bgImage: assets.work_portfolio,
+    links: [
+      {
+        name: "View",
+        url: "https://portfolio-nextjs7-iom9vlmyy-kabiraj-budhas-projects-dc012b23.vercel.app/",
+      },
+    ],
+  },
+  {
+    title: "E-commerce App",
+    description: "React.js, Express.js & MongoDB",
+    bgImage: assets.work_ecommerce,
+    links: [
+      {
+        name: "Frontend",
+        url: "https://full-stack-ecommerce-apps-3-frontend.onrender.com",
+      },
+      {
+        name: "Admin",
+        url: "https://full-stack-ecommerce-apps-3-admin.onrender.com",
+      },
+      {
+        name: "Backend",
+        url: "https://full-stack-ecommerce-apps-3.onrender.com",
+      },
+    ],
+  },
+  {
+    title: "Expense Tracker",
+    description: "React.js frontend project",
+    bgImage: assets.expense_tracker,
+    links: [
+      { name: "View", url: "https://react-expense-tracker-app1.vercel.app/" },
+    ],
+  },
+  {
+    title: "Blog Platform",
+    description: "Responsive blogging site",
+    bgImage: assets.work_blog,
+    links: [{ name: "View", url: "https://blog-app-1-pmhp.onrender.com" }],
+  },
 ];
-
 
 export const serviceData = [
   {
@@ -103,12 +145,13 @@ export const serviceData = [
     description: "Build modern, responsive websites.",
     link: "",
   },
- {
-  icon: assets.project_icon,
-  title: "Project Optimization",
-  description: "Improve performance, SEO, and responsiveness of web projects.",
-  link: "",
-},
+  {
+    icon: assets.project_icon,
+    title: "Project Optimization",
+    description:
+      "Improve performance, SEO, and responsiveness of web projects.",
+    link: "",
+  },
 
   {
     icon: assets.ui_icon,
@@ -123,9 +166,6 @@ export const serviceData = [
     link: "",
   },
 ];
-
-
-
 
 // import user_image from "./user-image.png";
 // import code_icon from "./code-icon.png";
@@ -164,7 +204,6 @@ export const serviceData = [
 // import send_icon from "./send-icon.png";
 // import right_arrow_bold from "./right-arrow-bold.png";
 // import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
-
 
 // export const assets = {
 //   user_image,
@@ -232,8 +271,6 @@ export const serviceData = [
 //     link: "https://yourblog.com",
 //   },
 // ];
-
-
 
 // export const serviceData = [
 //   {
