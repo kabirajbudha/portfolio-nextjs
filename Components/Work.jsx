@@ -24,69 +24,101 @@ const Work = ({ isDarkMode }) => {
         creativity, and development experience.
       </motion.p>
 
-      <motion.div className="grid grid-cols-auto my-10 gap-5 dark:text-black">
+      <motion.div className="grid grid-cols-auto my-10 gap-8 dark:text-black">
         {workData.map((project, index) => (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group hover-lift"
-            style={{ backgroundImage: `url(${project.bgImage})` }}
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-white dark:bg-darkTheme/60 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
           >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-Ovo font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700">{project.description}</p>
-              </div>
-              {project.links.length === 1 ? (
-                <a
-                  href={project.links[0].url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
-                >
-                  <Image
-                    src={assets.send_icon}
-                    alt="Send Icon"
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              ) : (
-                <div
-                  onClick={() =>
-                    setShowMenus((prev) => ({ ...prev, [index]: !prev[index] }))
-                  }
-                  className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition cursor-pointer"
-                >
-                  <Image
-                    src={assets.send_icon}
-                    alt="Send Icon"
-                    width={24}
-                    height={24}
-                  />
-                </div>
-              )}
+            <div className="relative h-48 overflow-hidden">
+              <Image
+                src={project.bgImage}
+                layout="fill"
+                objectFit="cover"
+                alt={project.title}
+                className="group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            {showMenus[index] && project.links.length > 1 && (
-              <div className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-white rounded-md p-2 shadow-lg z-10">
-                {project.links.map((link, i) => (
-                  <a
+            <div className="p-6">
+              <h2 className="font-Ovo font-semibold text-xl mb-2 text-gray-800 dark:text-white">
+                {project.title}
+              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag, i) => (
+                  <span
                     key={i}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block py-1 px-3 hover:bg-gray-100 text-sm"
-                    onClick={() =>
-                      setShowMenus((prev) => ({ ...prev, [index]: false }))
-                    }
+                    className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
                   >
-                    {link.name}
-                  </a>
+                    {tag}
+                  </span>
                 ))}
               </div>
-            )}
+              <div className="flex justify-end pt-4">
+                {project.links.length === 1 ? (
+                  <a
+                    href={project.links[0].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    View Project
+                    <Image
+                      src={assets.send_icon}
+                      alt="Send Icon"
+                      width={16}
+                      height={16}
+                    />
+                  </a>
+                ) : (
+                  <div className="relative">
+                    <button
+                      onClick={() =>
+                        setShowMenus((prev) => ({
+                          ...prev,
+                          [index]: !prev[index],
+                        }))
+                      }
+                      className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      View Links
+                      <Image
+                        src={assets.send_icon}
+                        alt="Send Icon"
+                        width={16}
+                        height={16}
+                      />
+                    </button>
+                    {showMenus[index] && (
+                      <div className="absolute bottom-full right-0 mb-2 bg-white dark:bg-gray-800 rounded-md p-2 shadow-lg z-10 w-32">
+                        {project.links.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block py-1 px-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm text-gray-800 dark:text-white"
+                            onClick={() =>
+                              setShowMenus((prev) => ({
+                                ...prev,
+                                [index]: false,
+                              }))
+                            }
+                          >
+                            {link.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
           </motion.div>
         ))}
       </motion.div>

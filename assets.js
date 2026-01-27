@@ -99,9 +99,10 @@ export const workData = [
     links: [
       {
         name: "View",
-        url: "https://portfolio-nextjs7-iom9vlmyy-kabiraj-budhas-projects-dc012b23.vercel.app/",
+        url: "#",
       },
     ],
+    tags: ["Next.js", "TailwindCSS"],
   },
   {
     title: "E-commerce App",
@@ -121,6 +122,7 @@ export const workData = [
         url: "https://full-stack-ecommerce-apps-3.onrender.com",
       },
     ],
+    tags: ["React.js", "Express.js", "MongoDB"],
   },
   {
     title: "Expense Tracker",
@@ -129,12 +131,17 @@ export const workData = [
     links: [
       { name: "View", url: "https://react-expense-tracker-app1.vercel.app/" },
     ],
+    tags: ["React.js"],
   },
   {
     title: "Blog Platform",
     description: "Responsive blogging site",
     bgImage: assets.work_blog,
-    links: [{ name: "View", url: "https://blog-app-1-pmhp.onrender.com" }],
+    links: [
+      { name: "Frontend", url: "https://blog-app-1-pmhp.onrender.com" },
+      { name: "Admin", url: "#" },
+    ],
+    tags: ["Next.js", "TailwindCSS"],
   },
 ];
 
