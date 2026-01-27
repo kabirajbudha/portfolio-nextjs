@@ -139,7 +139,7 @@ export const workData = [
     bgImage: assets.work_blog,
     links: [
       { name: "Frontend", url: "https://blog-app-1-pmhp.onrender.com" },
-      { name: "Admin", url: "#" },
+      { name: "Admin", url: "https://blog-app-1-pmhp.onrender.com/admin" },
     ],
     tags: ["Next.js", "TailwindCSS"],
   },
