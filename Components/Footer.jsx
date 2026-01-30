@@ -32,7 +32,7 @@ const Footer = ({ isDarkMode }) => {
         <ul className="flex items-center gap-6 justify-center mt-4 sm:mt-0">
           <li>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/kabiraj-budha/"
               target="_blank"
               className="hover:text-blue-700 transition-colors hover:scale-110"
             >
@@ -50,7 +50,7 @@ const Footer = ({ isDarkMode }) => {
           </li>
           <li>
             <a
-              href="https://www.fiverr.com/yourusername"
+              href="https://www.fiverr.com/kabiraj_web_dev"
               target="_blank"
               className="hover:text-blue-600 transition-colors hover:scale-110"
             >
@@ -59,7 +59,7 @@ const Footer = ({ isDarkMode }) => {
           </li>
           <li>
             <a
-              href="https://www.upwork.com/freelancers/~yourprofile"
+              href="https://www.upwork.com/freelancers/~0154b4cf506d072bbb"
               target="_blank"
               className="hover:text-blue-400 transition-colors hover:scale-110"
             >
