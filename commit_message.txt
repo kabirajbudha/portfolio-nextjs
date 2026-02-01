@@ -1,0 +1,6 @@
+feat: Redesign work section and add project tags
+
+- Redesigned the project cards in the "Work" section for a cleaner, more modern look.
+- Added technology tags to each project to highlight the skills used.
+- Updated the .gitignore file to exclude local environment variables.
+- Added an example environment file (.env.example).
