@@ -50,7 +50,7 @@ const Footer = ({ isDarkMode }) => {
           </li>
           <li>
             <a
-              href="https://www.fiverr.com/kabiraj_web_dev"
+              href="https://www.fiverr.com/s/38Q0XKV"
               target="_blank"
               className="hover:text-blue-600 transition-colors hover:scale-110"
             >
