@@ -62,7 +62,7 @@ const Work = ({ isDarkMode }) => {
               <div className="flex justify-end pt-4">
                 {project.links.length === 1 ? (
                   <a
-                    href={project.links[0].url}
+                    href={"https://portfolio-nextjs1-five.vercel.app/"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
