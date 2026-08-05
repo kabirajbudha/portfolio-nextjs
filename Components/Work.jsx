@@ -36,8 +36,8 @@ const Work = ({ isDarkMode }) => {
             <div className="relative h-48 overflow-hidden">
               <Image
                 src={project.bgImage}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 alt={project.title}
                 className="group-hover:scale-105 transition-transform duration-300"
               />
