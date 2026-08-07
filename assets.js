@@ -51,7 +51,7 @@ export const assets = {
   work_3: "/assets/work-3.png",
   work_4: "/assets/work-4.png",
   work_portfolio: "/assets/work-portfolio.png",
-  work_ecommerce: "/assets/work-ecommerce.png",
+  work_ecommerce: "/assets/work-ecommerce.PNG",
   work_blog: "/assets/work-blog.PNG",
   expense_tracker: "/assets/expense-tracker.png",
 
