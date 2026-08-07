@@ -119,7 +119,7 @@ export const workData = [
       },
       {
         name: "Backend",
-        url: "https://full-stack-ecommerce-apps-3.onrender.com",
+        url: "https://full-stack-ecommerce-apps-5.onrender.com",
       },
     ],
     tags: ["React.js", "Express.js", "MongoDB"],
@@ -138,8 +138,8 @@ export const workData = [
     description: "Responsive blogging site",
     bgImage: assets.work_blog,
     links: [
-      { name: "Frontend", url: "https://blog-app-1-pmhp.onrender.com" },
-      { name: "Admin", url: "https://blog-app-1-pmhp.onrender.com/admin" },
+      { name: "Frontend", url: "https://blog-app-2-d14f.onrender.com" },
+      { name: "Admin", url: "https://blog-app-2-d14f.onrender.com/admin" },
     ],
     tags: ["Next.js", "TailwindCSS"],
   },
