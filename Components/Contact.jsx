@@ -41,7 +41,7 @@ const Contact = () => {
       transition={{ duration: 1 }}
       id="contact"
       className='w-full px-4 sm:px-6 lg:px-[12%] pb-10 scroll-mt-20
-            bg-[url("/footer-bg-color.png")] bg-cover bg-center dark:bg-[url("/footer-bg-color-dark.png")] dark:bg-cover dark:bg-center dark:bg-darkTheme'
+        bg-[url("/assets/footer-bg-color.png")] bg-cover bg-center dark:bg-[url("/assets/footer-bg-color-dark.png")] dark:bg-cover dark:bg-center dark:bg-darkTheme'
     >
       <motion.h4 className="text-center mb-2 text-lg font-Ovo">
         Connect with me
