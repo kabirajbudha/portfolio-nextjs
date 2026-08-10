@@ -63,8 +63,8 @@ const Work = ({ isDarkMode }) => {
                 {project.links.length === 1 ? (
                   <a
                     href={project.links[0].url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={index === 0 ? "_self" : "_blank"}
+                    rel={index === 0 ? "" : "noopener noreferrer"}
                     className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     View Project
