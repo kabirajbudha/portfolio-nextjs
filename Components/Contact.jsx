@@ -11,10 +11,10 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
     const payload = {
-    access_key: "4b24fd01-8a78-4dfd-b1ac-1f4e46d63df6",
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
+      access_key: "4b24fd01-8a78-4dfd-b1ac-1f4e46d63df6",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
     };
 
     const response = await fetch("https://api.web3forms.com/submit", {
