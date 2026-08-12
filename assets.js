@@ -99,7 +99,7 @@ export const workData = [
     links: [
       {
         name: "View",
-        url: "https://portfolio-nextjs1-five.vercel.app/",
+        url: "https://portfolio-nextjs1-olive.vercel.app/",
       },
     ],
     tags: ["Next.js", "TailwindCSS"],
